@@ -6,6 +6,16 @@
  * Puis hors de la fonction afficher les plantes par ordre alphabétique
  * et leur nouveau niveau d'eau
  */
+
+ function arroser(array $plants): array
+ {
+    for ($i=0; $i < count($plants); $i++) { 
+        $plants[$i]['waterLevel'] += 20;
+    }
+
+    return $plants;
+ }
+
 $plants = [
     ['name'=> 'Ficus', "waterLevel" => 54 ],
     ['name'=> 'Cactus', "waterLevel" => 18 ],
@@ -15,3 +25,14 @@ $plants = [
     ['name'=> 'Echeveria', "waterLevel" => 41 ],
     ['name'=> 'Hortensia', "waterLevel" => 7 ],
 ];
+
+$plants = arroser($plants);
+
+usort($plants, function ($a, $b) {
+    return ($a['name'] < $b['name']) ? -1 : 1;
+});
+
+foreach($plants as $plant) {
+    echo $plant['name'] . ' - eau : ' . $plant['waterLevel'] . PHP_EOL;
+}
+
