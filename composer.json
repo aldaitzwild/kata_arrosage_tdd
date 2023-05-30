@@ -1,0 +1,17 @@
+{
+    "name": "thoma/arrosage_tdd",
+    "autoload": {
+        "psr-4": {
+            "Thoma\\ArrosageTdd\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas Aldaitz",
+            "email": "thomas.aldaitz@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "10"
+    }
+}
